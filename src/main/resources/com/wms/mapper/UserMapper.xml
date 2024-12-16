@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.UserMapper">
+    <select id="list" resultType="com.wms.pojo.User">
+        select * from wms.user
+    </select>
+    <insert id="addUser">
+        insert into wms.user (no, name, password, age, sex, phone) values (#{no}, #{name}, #{password}, #{age} ,#{sex} ,#{phone})
+    </insert>
+    <update id="modUser">
+        update wms.user set no=#{no}, name=#{name}, password=#{password}, age=#{age}, sex=#{sex}, phone=#{phone}, role_id=#{roleId} where id=#{id}
+    </update>
+    <delete id="delUser">
+        delete from wms.user where id=#{id}
+    </delete>
+    <select id="getUserById" resultType="com.wms.pojo.User">
+        select * from wms.user where id = #{id}
+    </select>
+    <select id="getUsersByInfo" resultType="com.wms.pojo.User">
+        select * from wms.user where no like '%${no}%' and age=#{age}
+    </select>
+</mapper>
