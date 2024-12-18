@@ -19,26 +19,31 @@ public class UserController {
         return userService.list();
     }
 
+    @CrossOrigin
     @PostMapping("/save")
     public boolean addUser(@RequestBody User user){
         return userService.addUser(user);
     }
 
+    @CrossOrigin
     @PostMapping("/mod")
     public boolean modUser(@RequestBody User user){
         return userService.modUser(user);
     }
 
+    @CrossOrigin
     @GetMapping("/del")
     public boolean delUser(int id){
         return userService.delUser(id);
     }
 
+    @CrossOrigin
     @GetMapping("/queryById")
     public User getUserById(int id){
         return userService.getUserById(id);
     }
 
+    @CrossOrigin
     @GetMapping("/queryByInfo")
     public List<User> getUsersByInfo(String no, Integer age ){
         return userService.getUserByInfo(no, age);
