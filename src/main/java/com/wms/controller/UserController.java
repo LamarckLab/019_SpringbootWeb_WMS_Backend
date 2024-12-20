@@ -40,6 +40,7 @@ public class UserController {
         return userService.modUser(user);
     }
 
+    // 这个接口用于实现：删除User表中的某条数据
     @CrossOrigin
     @GetMapping("/del")
     public boolean delUser(int id){
