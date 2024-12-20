@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    // 查询User表中的全部用户
+    // 请求User表中的全部用户
     List<User> list();
 
     // User表中添加用户

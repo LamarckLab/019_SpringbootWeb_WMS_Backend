@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserService {
     List<User> list();  // UserController类中的list接口会调用这个方法
 
-    boolean addUser(User user);
+    boolean addUser(User user);  // UserController类中的save接口会调用这个方法
 
     boolean modUser(User user);
 
