@@ -41,6 +41,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getUserByInfo(String no, Integer age) {
-        return userMapper.getUsersByInfo(no, age);
+        return userMapper.getUsersByInfo(no, age);  // 调用UserMapper中的getUserByInfo方法
     }
 }

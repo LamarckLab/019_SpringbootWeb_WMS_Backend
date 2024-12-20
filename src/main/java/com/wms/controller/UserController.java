@@ -54,6 +54,7 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    // 这个接口用于实现：根据no（模糊查询）和age（精确查询）两条信息查询满足条件的条目
     @CrossOrigin
     @GetMapping("/queryByInfo")
     public List<User> getUsersByInfo(String no, Integer age ){

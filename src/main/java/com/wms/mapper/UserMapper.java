@@ -23,6 +23,6 @@ public interface UserMapper {
     // 查询User表中的某个用户（基于id）
     User getUserById(int id);
 
-    // 模糊查询User表中的用户（no模糊查询 age精确查询）
+    // 根据多条信息查询User表中的用户（no模糊查询 age精确查询）
     List<User> getUsersByInfo(String no, Integer age);
 }
