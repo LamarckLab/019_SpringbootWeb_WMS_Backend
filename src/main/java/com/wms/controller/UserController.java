@@ -33,6 +33,7 @@ public class UserController {
         return userService.addUser(user);
     }
 
+    // 这个接口用于实现：修改User表中某条数据
     @CrossOrigin
     @PostMapping("/mod")
     public boolean modUser(@RequestBody User user){

@@ -14,7 +14,7 @@ public interface UserMapper {
     // User表中添加用户
     boolean addUser(User user);
 
-    // 对User表中的内容进行更新
+    // 更新User表中的某个用户信息
     boolean modUser(User user);
 
     // 删除User表中的某个用户（基于id）

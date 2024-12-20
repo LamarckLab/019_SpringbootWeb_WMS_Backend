@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean modUser(User user) {
-        return userMapper.modUser(user);
+        return userMapper.modUser(user);  // 调用UserMapper中的modUser方法
     }
 
     @Override

@@ -9,7 +9,7 @@ public interface UserService {
 
     boolean addUser(User user);  // UserController类中的save接口会调用这个方法
 
-    boolean modUser(User user);
+    boolean modUser(User user);  // UserController类中的mod接口会调用这个方法
 
     boolean delUser(int id);
 
