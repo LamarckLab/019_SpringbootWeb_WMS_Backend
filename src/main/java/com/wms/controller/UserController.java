@@ -47,6 +47,7 @@ public class UserController {
         return userService.delUser(id);
     }
 
+    // 这个接口用于实现：根据id查询User表中的某条数据
     @CrossOrigin
     @GetMapping("/queryById")
     public User getUserById(int id){

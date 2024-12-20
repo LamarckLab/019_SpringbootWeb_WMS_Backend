@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(int id) {
-        return userMapper.getUserById(id);
+        return userMapper.getUserById(id);  // 调用UserMapper中的getUserById方法
     }
 
     @Override

@@ -13,7 +13,7 @@ public interface UserService {
 
     boolean delUser(int id);  // UserController类中的del接口会调用这个方法
 
-    User getUserById(int id);
+    User getUserById(int id);  // UserController类中的queryById接口会调用这个方法
 
     List<User> getUserByInfo(String no,Integer age);
 }
