@@ -25,4 +25,7 @@ public interface UserMapper {
 
     // 根据多条信息查询User表中的用户（no模糊查询 age精确查询）
     List<User> getUsersByInfo(String no, Integer age);
+
+    @Select("SELECT * FROM user WHERE name LIKE CONCAT('%', #{name}, '%')")
+    List<User> findByName(@Param("name") String name);
 }

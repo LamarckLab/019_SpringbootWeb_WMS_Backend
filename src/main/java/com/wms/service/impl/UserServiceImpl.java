@@ -43,4 +43,14 @@ public class UserServiceImpl implements UserService {
     public List<User> getUserByInfo(String no, Integer age) {
         return userMapper.getUsersByInfo(no, age);  // 调用UserMapper中的getUserByInfo方法
     }
+
+    @Override
+    public List<User> listByName(String name) {
+        if(name != null && !name.isEmpty()){
+            return userMapper.findByName(name);
+        }
+        else{
+            return userMapper.list();
+        }
+    }
 }

@@ -16,4 +16,6 @@ public interface UserService {
     User getUserById(int id);  // UserController类中的queryById接口会调用这个方法
 
     List<User> getUserByInfo(String no,Integer age);  // UserController类中的queryByInfo接口会调用这个方法
+
+    List<User> listByName(String name);
 }
