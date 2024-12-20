@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<User> list(){
+    public List<User> list() {
         return userMapper.list();  // 调用UserMapper中的list方法
     }
 
@@ -44,13 +44,31 @@ public class UserServiceImpl implements UserService {
         return userMapper.getUsersByInfo(no, age);  // 调用UserMapper中的getUserByInfo方法
     }
 
+//    @Override
+//    public List<User> listByName(String name) {
+//        if (name != null && !name.isEmpty()) {  // 如果传入的name不为null且不为空,执行UseMapper中的findByName方法
+//            return userMapper.findByName(name);
+//        } else {
+//            return userMapper.list();  // 如果name为null或不为空，执行UserMapper中的list方法
+//        }
+//    }
+
     @Override
-    public List<User> listByName(String name) {
-        if(name != null && !name.isEmpty()){  // 如果传入的name不为null且不为空,执行UseMapper中的findByName方法
+    public List<User> listByNameAndSex(String name, Integer sex) {
+        if (name != null && !name.isEmpty() && sex != null) {
+            return userMapper.findByNameAndSex(name, sex);
+        }
+        else if(name != null && !name.isEmpty()){
             return userMapper.findByName(name);
         }
+        else if(sex != null){
+            return userMapper.findBySex(sex);
+        }
         else{
-            return userMapper.list();  // 如果name为null或不为空，执行UserMapper中的list方法
+            return userMapper.list();
         }
     }
+
 }
+
+

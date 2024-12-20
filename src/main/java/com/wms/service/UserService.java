@@ -17,5 +17,8 @@ public interface UserService {
 
     List<User> getUserByInfo(String no,Integer age);  // UserController类中的queryByInfo接口会调用这个方法
 
-    List<User> listByName(String name);  // UserController类中的分页查询会调用这个方法
+//    List<User> listByName(String name);  // UserController类中的分页查询会调用这个方法
+
+    List<User> listByNameAndSex(String name, Integer sex);  // UserController类中的分页查询会调用这个方法
+
 }

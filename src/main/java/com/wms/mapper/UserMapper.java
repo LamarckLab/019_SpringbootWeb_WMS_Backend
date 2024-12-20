@@ -26,6 +26,15 @@ public interface UserMapper {
     // 根据多条信息查询User表中的用户（no模糊查询 age精确查询）
     List<User> getUsersByInfo(String no, Integer age);
 
-    // 根据姓名进行模糊查询
+    // 根据姓名（模糊）进行查询
     List<User> findByName(String name);
+
+    // 根据姓名（模糊）、性别（精确）进行查询
+    @Select("SELECT * FROM user WHERE name LIKE CONCAT('%', #{name}, '%') and sex=#{sex}")
+    List<User> findByNameAndSex(String name, Integer sex);
+
+    // 根据性别（精确）进行查询
+    @Select("SELECT * FROM user WHERE sex=#{sex}")
+    List<User> findBySex(Integer sex);
+
 }

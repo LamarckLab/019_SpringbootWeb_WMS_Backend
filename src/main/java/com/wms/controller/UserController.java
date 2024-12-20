@@ -66,13 +66,16 @@ public class UserController {
     public HashMap<String, Object> getUserList(  // 该方法的返回类型是一个HashMap，用于封装分页数据
             @RequestParam(defaultValue = "1") int pageNum,  // pageNum的默认值是1  pageSize的默认值是5
             @RequestParam(defaultValue = "5") int pageSize,
-            @RequestParam(required = false) String name){
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Integer sex){
         // 启动分页功能
         PageHelper.startPage(pageNum, pageSize);
         // 获取所有用户数据
 //        List<User> users = userService.list();
-        // 查询用户列表（带条件查询）
-        List<User> users = userService.listByName(name);
+        // 查询用户列表（条件查询:name）
+//        List<User> users = userService.listByName(name);
+        // 查询用户列表（条件查询:name、age）
+        List<User> users = userService.listByNameAndSex(name, sex);
         // PageInfo是PageHelper提供的工具类，在这里用于封装users的信息
         PageInfo<User> pageInfo = new PageInfo<>(users);
         // 创建了一个空的HashMap，用于封装返回给前端的数据
