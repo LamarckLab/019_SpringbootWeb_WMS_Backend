@@ -22,4 +22,7 @@
     <select id="getUsersByInfo" resultType="com.wms.pojo.User">
         select * from wms.user where no like '%${no}%' and age=#{age}
     </select>
+    <select id="findByName" resultType="com.wms.pojo.User">
+        SELECT * FROM user WHERE name LIKE CONCAT('%', #{name}, '%')
+    </select>
 </mapper>

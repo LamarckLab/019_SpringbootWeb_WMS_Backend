@@ -46,11 +46,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> listByName(String name) {
-        if(name != null && !name.isEmpty()){
+        if(name != null && !name.isEmpty()){  // 如果传入的name不为null且不为空,执行UseMapper中的findByName方法
             return userMapper.findByName(name);
         }
         else{
-            return userMapper.list();
+            return userMapper.list();  // 如果name为null或不为空，执行UserMapper中的list方法
         }
     }
 }
