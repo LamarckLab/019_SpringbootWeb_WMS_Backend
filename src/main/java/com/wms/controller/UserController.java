@@ -13,17 +13,17 @@ import java.util.HashMap;
 import java.util.List;
 
 // UserController类中存放的有关User的各种接口
-@RestController  // 这个注解用来申明这个类是一个Controller类，告诉Spring这是一个控制类
+@RestController  // 这个注解用来申明这个类是一个Controller类, 告诉Spring这是一个控制类
 public class UserController {
 
-    @Autowired  // 这是一个依赖注入注解，用来告诉Spring，Controller中需要一个UserService的实例
+    @Autowired  // 这是一个依赖注入注解，用来告诉Spring, Controller中需要一个UserService的实例
     private UserService userService;
 
     // 这个接口用于实现：打印User表中的全部条目
     @CrossOrigin  // 实现跨域请求的注解
     @GetMapping("/list")  // 访问的路径
     public List<User> printAllUsers(){
-        return userService.list();
+        return userService.list();  // 这里需要调用UserService中的方法
     }
 
     @CrossOrigin

@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> list(){
-        return  userMapper.list();
+        return userMapper.list();  // 调用UserMapper中的list方法
     }
 
     @Override
