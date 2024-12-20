@@ -1,18 +1,22 @@
 package com.wms.pojo;
 
+// pojo文件夹是用来存放与数据库对应的实体类
+// User实体类对应的是数据库中的User表
 public class User {
-    private Integer id;
-    private String no;
-    private String name;
-    private String password;
-    private Integer age;
-    private Integer sex;
-    private String phone;
-    private Integer roleId;
+    private Integer id;  // User表中的主键，自增
+    private String no;  // 用户的账号
+    private String name;  // 用户的姓名
+    private String password;  // 用户的密码
+    private Integer age;  // 用户的年龄
+    private Integer sex;  // 用户的性别
+    private String phone;  // 用户的电话
+    private Integer roleId;  // 用户的角色类型 0超级管理员 1管理员 2用户
 
+    // User实例的无参构造
     public User() {
     }
 
+    // User实例的全参构造
     public User(Integer id, String no, String name, String password, Integer age, Integer sex, String phone, Integer roleId) {
         this.id = id;
         this.no = no;
@@ -24,6 +28,7 @@ public class User {
         this.roleId = roleId;
     }
 
+    // 每个属性的Get Set方法
     public Integer getId() {
         return id;
     }
@@ -88,6 +93,7 @@ public class User {
         this.roleId = roleId;
     }
 
+    // User实例的toString方法
     @Override
     public String toString() {
         return "User{" +
