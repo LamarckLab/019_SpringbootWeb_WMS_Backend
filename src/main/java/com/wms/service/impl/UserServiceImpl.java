@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean delUser(int id) {
+    public boolean delUser(Integer id) {
         return userMapper.delUser(id);  // 调用UserMapper中的delUser方法
     }
 

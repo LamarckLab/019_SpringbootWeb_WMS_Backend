@@ -11,7 +11,7 @@ public interface UserService {
 
     boolean modUser(User user);  // UserController类中的mod接口会调用这个方法
 
-    boolean delUser(int id);  // UserController类中的del接口会调用这个方法
+    boolean delUser(Integer id);  // UserController类中的del接口会调用这个方法
 
     User getUserById(int id);  // UserController类中的queryById接口会调用这个方法
 

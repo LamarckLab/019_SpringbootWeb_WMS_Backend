@@ -18,7 +18,7 @@ public interface UserMapper {
     boolean modUser(User user);
 
     // 删除User表中的某个用户（基于id）
-    boolean delUser(int id);
+    boolean delUser(Integer id);
 
     // 查询User表中的某个用户（基于id）
     User getUserById(int id);
