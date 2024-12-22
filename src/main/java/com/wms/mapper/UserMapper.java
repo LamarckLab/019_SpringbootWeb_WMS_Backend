@@ -37,4 +37,6 @@ public interface UserMapper {
     @Select("SELECT * FROM user WHERE sex=#{sex}")
     List<User> findBySex(Integer sex);
 
+    @Select("SELECT * FROM user WHERE no = #{no}")
+    User getUserByNo(String no);
 }

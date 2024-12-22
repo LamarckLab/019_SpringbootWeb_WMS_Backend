@@ -86,4 +86,21 @@ public class UserController {
         result.put("total", pageInfo.getTotal());
         return result;
     }
+
+    // 接收前端传递的用户登录信息并验证
+    @CrossOrigin  // 跨域注解
+    @PostMapping("/login")
+    public HashMap<String, Object> login(@RequestBody User loginRequest) {
+        HashMap<String, Object> result = new HashMap<>();
+        User user = userService.getUserByNo(loginRequest.getNo());
+        if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
+            result.put("success", true);
+            result.put("message", "Login successful");
+        } else {
+            result.put("success", false);
+            result.put("message", "Incorrect ID or Password");
+        }
+        return result;
+    }
+
 }

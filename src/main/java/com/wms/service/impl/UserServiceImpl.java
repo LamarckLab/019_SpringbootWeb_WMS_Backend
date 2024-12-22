@@ -69,6 +69,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public User getUserByNo(String no) {
+        return userMapper.getUserByNo(no);
+    }
+
 }
 
 
