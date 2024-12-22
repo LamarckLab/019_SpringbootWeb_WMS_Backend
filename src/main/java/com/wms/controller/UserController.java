@@ -88,7 +88,7 @@ public class UserController {
     }
 
     // 接收前端传递的用户登录信息并验证
-    @CrossOrigin  // 跨域注解
+    @CrossOrigin
     @PostMapping("/login")
     public HashMap<String, Object> login(@RequestBody User loginRequest) {
         HashMap<String, Object> result = new HashMap<>();
