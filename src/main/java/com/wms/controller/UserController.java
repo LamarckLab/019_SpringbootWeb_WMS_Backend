@@ -88,9 +88,9 @@ public class UserController {
     }
 
     // 接收前端传递的用户登录信息并验证
-    @CrossOrigin
-    @PostMapping("/login")
-    public HashMap<String, Object> login(@RequestBody User loginRequest) {
+    @CrossOrigin  // 运行进行跨域请求
+    @PostMapping("/login")  // 当前端向/login发送一个POST请求时，会调用这个方法
+    public HashMap<String, Object> login(@RequestBody User loginRequest) {  // 返回值是一个HashMap, 键是String, 值是Object, 前端请求被解析为一个User对象
         HashMap<String, Object> result = new HashMap<>();
         User user = userService.getUserByNo(loginRequest.getNo());
         if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
