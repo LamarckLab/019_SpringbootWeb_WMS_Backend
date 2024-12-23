@@ -101,7 +101,7 @@ public class UserController {
             result.put("success", false);
             result.put("message", "Incorrect ID or Password");
         }
-        return result;  // 将rusult这个HashMap返回给前端
+        return result;  // 将result这个HashMap返回给前端
     }
 
 }
