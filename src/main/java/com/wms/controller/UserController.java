@@ -96,6 +96,7 @@ public class UserController {
         if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
             result.put("success", true);
             result.put("message", "Login successful");
+            result.put("user", user);
         } else {
             result.put("success", false);
             result.put("message", "Incorrect ID or Password");
